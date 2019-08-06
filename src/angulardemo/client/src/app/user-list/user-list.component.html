@@ -1,0 +1,31 @@
+<p>user-list works!</p>
+<div>
+  <p> 用户列表</p>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>User Name</th>
+      <th>Password</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <th >{{user.id}}</th>
+      <td >{{user.userName}}</td>
+      <td >{{user.password}}</td>
+      <td >{{user.age}}</td>
+      <td >{{user.sex}}</td>
+      <td ><a mat-button color="primary" [routerLink]="['/user-edit',user.id]" > Edit </a> </td>
+      <td ><a mat-button color="primary" [routerLink]="['/user-delete',user.id]"> Delete </a> </td>
+    </tr>
+    <tbody>
+  </table>
+</div>
+<div>
+  <button mat-fab color="primary" [routerLink]="['/user-add']"> Add </button>
+</div>
